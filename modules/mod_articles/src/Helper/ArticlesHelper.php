@@ -373,7 +373,7 @@ class ArticlesHelper implements DatabaseAwareInterface
             }
 
             // Show the Intro/Full image field of the article
-            if ($params->get('image') && $params->get('img_intro_full') !== 'none') {
+            if ($params->get('img_intro_full') !== 'none') {
                 $images             = (new Registry($item->images))->toObject();
                 $item->imageSrc     = '';
 
