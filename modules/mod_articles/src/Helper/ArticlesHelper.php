@@ -368,12 +368,12 @@ class ArticlesHelper implements DatabaseAwareInterface
                 }
 
                 if ($introtext_limit != 0) {
-                    $item->displayIntrotext = SpecialStringHelper::truncate($item->introtext, $introtext_limit, true, false);
+                    $item->displayIntrotext = SpecialStringHelper::truncateComplex($item->displayIntrotext, $introtext_limit, true);
                 }
             }
 
             // Show the Intro/Full image field of the article
-            if ($params->get('img_intro_full') !== 'none') {
+            if ($params->get('image') && $params->get('img_intro_full') !== 'none') {
                 $images             = (new Registry($item->images))->toObject();
                 $item->imageSrc     = '';
 
